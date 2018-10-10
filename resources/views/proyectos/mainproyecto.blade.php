@@ -29,6 +29,7 @@
 		  <thead>
 		    <tr>
 		      <th style="width: 10%"  class="text-center"><font size="3">Codigo</font></th>
+					<th style="width: 10%"  class="text-center"><font size="3">Estudiante</font></th>
 		      <th style="width: 35%"><font size="3">Nombre Proyecto</font></th>
 		      <th style="width: 35%"><font size="3">Area Proyecto</font></th>
               <th style="width: 10%"><font size="3">Estado</font></th>

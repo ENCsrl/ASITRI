@@ -40,6 +40,8 @@ class CarreraController extends Controller
         ->where('clasificacion','area')
         ->get();
         $carreras = Carrera::orderby('idCarrera','asc')
+        //$carreras = Carrera::all();
+       // dd($carreras);
        // ->where('clasificacion','area')
         ->get();
         $subareas = Area::orderby('nombreArea','asc')

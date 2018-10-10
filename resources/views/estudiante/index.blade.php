@@ -133,6 +133,15 @@
               <p class="red-text">*Obligatorio</p>
                <!-- Grid row -->
                <div class="form-row">
+                    <!-- Grid column -->
+                   <div class="col-md-12">
+                       <!-- Material input -->
+                       <div class="md-form form-group">
+                           <input type="number" class="form-control validate" id="codigo" placeholder="Ingrese su codigo">
+                           <label for="nombre">CodSis <b class="h5 red-text">*</b></label>
+                       </div>
+                   </div>
+                   <!-- Grid column -->
                    <!-- Grid column -->
                    <div class="col-md-12">
                        <!-- Material input -->
@@ -205,6 +214,8 @@
                        </div>
                    </div>
                    <!-- Grid column -->
+            
+
                </div>
                <!-- Grid row -->
                

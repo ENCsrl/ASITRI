@@ -40,6 +40,12 @@
                             <li>
                                 <a href="/proyecto_est" class="waves-effect">Asignar Proyecto</a>
                             </li>
+                            <li>
+                                <a href="/perfilesr" class="waves-effect">perfiles</a>
+                            </li>
+                            <li>
+                                <a href="/reportes" class="waves-effect">Reportes</a>
+                            </li>
                         </ul>
                     </div>
                 </li>

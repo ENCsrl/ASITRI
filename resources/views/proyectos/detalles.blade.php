@@ -16,6 +16,9 @@
         @foreach($areas as $area)
             {{$area -> nombreArea}} <br>
         @endforeach
+
+       
+
         <p><b>Sub Areas Proyecto:</b></p>
        @foreach($subareas as $subarea)
             {{$subarea -> nombreArea}} <br>

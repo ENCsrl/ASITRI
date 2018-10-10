@@ -10,6 +10,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Proyecto;
 use App\Estudiante;
+use App\Carrera;
 use App\Area;
 use App\Modalidad;
 use App\Proyecto_has_area;
@@ -31,6 +32,61 @@ class ProyectoController extends Controller
         $proyectos = Proyecto::orderBy('idProyecto', 'des')->paginate(500);
         return view('proyectos.mainproyecto', compact('proyectos'));
     }
+    public function indicereg(){
+
+        $estudiantes = Estudiante::orderBy('apellidoEst', 'asc')->paginate(500);
+        $docentes = Docente::orderBy('apePaternoDoc', 'asc')->paginate(500);
+        $areas = Area::orderby('nombreArea','asc')
+        ->where('clasificacion','area')
+        ->get();
+        $carreras = Carrera::orderby('idCarrera','asc')
+        //$carreras = Carrera::all();
+       // dd($carreras);
+       // ->where('clasificacion','area')
+        ->get();
+        $subareas = Area::orderby('nombreArea','asc')
+        ->where('clasificacion','subarea')
+        ->get();
+        $modalidades = Modalidad::orderby('nombreMod','asc')->paginate(500);
+        $carreras = Carrera::all();
+        
+
+        $res[0]=$estudiantes;
+        $res[1]=$docentes;
+        $res[2]=$areas;
+        $res[3]=$modalidades;
+        $res[4]=$subareas;
+        $res[5]=$carreras;
+    
+        return view ('proyectos.perfilesreg',compact('res'));
+    }
+    public function indices(){
+        $estudiantes = Estudiante::orderBy('apellidoEst', 'asc')->paginate(500);
+        $docentes = Docente::orderBy('apePaternoDoc', 'asc')->paginate(500);
+        $areas = Area::orderby('nombreArea','asc')
+        ->where('clasificacion','area')
+        ->get();
+        $carreras = Carrera::orderby('idCarrera','asc')
+        //$carreras = Carrera::all();
+       // dd($carreras);
+       // ->where('clasificacion','area')
+        ->get();
+        $subareas = Area::orderby('nombreArea','asc')
+        ->where('clasificacion','subarea')
+        ->get();
+        $modalidades = Modalidad::orderby('nombreMod','asc')->paginate(500);
+        $carreras = Carrera::all();
+        
+
+        $res[0]=$estudiantes;
+        $res[1]=$docentes;
+        $res[2]=$areas;
+        $res[3]=$modalidades;
+        $res[4]=$subareas;
+        $res[5]=$carreras;
+    
+        return view ('proyectos.perfiles',compact('res'));
+    }
 
     
     /**
@@ -49,6 +105,7 @@ class ProyectoController extends Controller
         ->where('clasificacion','subarea')
         ->get();
         $modalidades = Modalidad::orderby('nombreMod','asc')->paginate(500);
+        $carreras = Carrera::all();
         
 
         $res[0]=$estudiantes;
@@ -56,6 +113,7 @@ class ProyectoController extends Controller
         $res[2]=$areas;
         $res[3]=$modalidades;
         $res[4]=$subareas;
+        $res[5]=$carreras;
         return view('proyectos.create', compact('res'));
     }
 

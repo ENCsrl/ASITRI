@@ -33,6 +33,12 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/createcarrera','CarreraController@create');
 	Route::post('/createcarrera','CarreraController@store');
 	Route::get('/creates','ProfileController@create');
+	Route::get('/perfil','ProyectoController@indice');
+	Route::get('/perfil','ProyectoController@create');
+	Route::get('/perfiles','ProyectoController@indices');
+	Route::get('/perfiles','ProyectoController@create');
+	Route::get('/perfilesr','ProyectoController@indicereg');
+	//Route::get('/reportes','ProyectoController');
 	//Route::get('/creates','ProfileController@index');
 	Route::post('/creates','ProfileController@store');
    // elmina

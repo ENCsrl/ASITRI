@@ -22,6 +22,35 @@
        <!-- Grid column -->
 
    </div> 
+    <!-- iniciando fradev -->
+    <!-- <div class="row">
+       <label class="col-sm-6 col-form-label">Area Proyecto: </label>
+       <label class="col-sm-6 col-form-label">Subarea Proyecto: </label>
+       <div class="col-md-6">
+            <select class="mdb-select colorful-select dropdown-primary" multiple name="area[]" id="area" required>
+                <option active disabled>Seleccionar una Area</option>
+                @foreach(($res[2]) as $area)
+                       <option value="{{ $area-> idArea}}"> {{ $area-> nombreArea}}</option>
+               @endforeach
+            </select>
+       </div>
+       <div class="col-md-6">
+           <select class="mdb-select colorful-select dropdown-primary" multiple name="subarea[]" id="subarea" required>
+               <option active disabled>Seleccionar una Subarea</option>
+               @foreach(($res[4]) as $subarea)
+                       <option value="{{ $subarea-> idArea}}"> {{ $subarea-> nombreArea}}</option>
+               @endforeach
+           </select>
+       </div>
+
+       <!--<div class='col-md-4'>
+           <input placeholder="Fecha Inicio del Proyecto" type="text" name="fechaIni" class="form-control datepicker">
+       </div>
+       <div class='col-md-4'>
+           <input placeholder="Fecha Fin del Proyecto" type="text" name="fechaFin" class="form-control datepicker">
+       </div>-->         
+   </div> 
+   <!-- hasta aqui de carreras -->
 
    <!-- Grid row -->
    <div class="form-row">
