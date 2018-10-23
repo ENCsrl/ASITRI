@@ -41,7 +41,7 @@
                                 <a href="/proyecto_est" class="waves-effect">Asignar Proyecto</a>
                             </li>
                             <li>
-                                <a href="/perfilesr" class="waves-effect">perfiles</a>
+                                <a href="/perfilesr" class="waves-effect">Nuevo Perfil</a>
                             </li>
                             <li>
                                 <a href="/reportes" class="waves-effect">Reportes</a>
@@ -115,10 +115,10 @@
                     <div class="collapsible-body">
                         <ul>
                             <li>
-                                <a href="/createcarrera" class="waves-effect">Carreras</a>
+                                <a href="/carreras" class="waves-effect">Carreras</a>
                             </li>
                             <li>
-                                <a href="/createcarrera" class="waves-effect">Nuevo Carrera</a>
+                                <a href="/crear" class="waves-effect">Nuevo Carrera</a>
                             </li>
                         </ul>
                     </div>

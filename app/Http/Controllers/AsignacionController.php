@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Asignacion;
 use App\Docente;
 use App\proyectos;
-
+use App\User;
 class AsignacionController extends Controller
 {
     /**

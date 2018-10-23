@@ -57,6 +57,7 @@
         </select>
         <!--/Blue select-->
 </div>
+    
 	<label class="col-md-5"></label>
 	<button class="btn btn-success" id="asignar">Asignar</button>
 </div>
@@ -76,6 +77,9 @@
                 'estudiante2': $('#estudiante2').val(),
                 'tutor1': $('#tutor1').val(),
                 'tutor2': $('#tutor2').val(),
+                'tribunal1': $('#tribunal1').val(),
+                'tribunal2': $('#tribunal2').val(),
+                'tribunal3': $('#tribunal3').val(),
             },
             success : function(data) {
                 toastr.success(data.message);

@@ -4,7 +4,7 @@
 
 @section('content')
 <h1 align="center">FORMULARIO APROBACION TEMA DE PROYECTO FINAL</h1>
-
+<div class="container">
 <form action="{{url('/')}}" method="POST" id="miForm">
    {{csrf_field()}}
 <!--editad fradev-->
@@ -13,11 +13,40 @@
        <div class="col-md-12">
             <select class="mdb-select colorful-select dropdown-primary" multiple name="area[]" id="area" required>
                 <option active disabled>Seleccionar Estudiante</option>
+                
+                
                 @foreach(($res[0]) as $estudiante)
-                       <option value="{{ $estudiante-> idEstudiante}}"> {{ $estudiante-> nombreEst}}</option>
+                       <option value="{{ $estudiante->idEstudiante}}"> {{ $estudiante-> nombreEst}}</option>
                @endforeach
+              
             </select>
        </div> 
+</div>
+<div class container>
+        <!-- <select name="" id="" disabled="disabled"> -->
+
+        <div class="form-group">
+<label for="exampleFormControlSelect1">Example select</label>
+<select class="form-control" id="exampleFormControlSelect1">
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+</select>
+</div>
+        <select class="form-control form-control-lg">
+            <option>Large select</option>
+            <option>Large select</option>
+            <option>Large select</option>
+            </select>
+        <option value="">
+            @foreach($res[0] as $estudiante)
+                <!-- <li>{{$estudiante->nombreEst}}</li> -->
+                <option value="{{ $estudiante->idEstudiante}}"> {{ $estudiante-> nombreEst}}</option>
+                @endforeach
+                <!-- </select> -->
+        </option>        
 </div> 
 <div class="form-row">
    <!-- Grid column -->
@@ -206,6 +235,7 @@
  <!-- hasta aqui -->
 
 </form>
+</div>
 <!-- <button class="btn btn-success">¿Soy un botón o un enlace?</button> -->
 <!-- <a href="/perfiles" class="btn btn-success">Siguiente</a> -->
 <input type="button" class="btn btn-success" name="imprimir" value="Imprimir P&aacute;gina" onclick="window.print();">

@@ -18,84 +18,49 @@ use App\Asignacion;
 use App\Renuncia;
 use DB;
 use App\Http\Requests;
-
+use App\User;
 class CarreraController extends Controller
 {
     //
-    public function index()
+    public function index(Request $request)
     {
-        //return view ('proyectos.mainproyecto');
-        //$carreras = Carrera::orderBy('idCarrera', 'des')->paginate(500);
-        //return view('carreras.createcarrera',compact('carreras'));
-        $carreras_v =Carrera::orderBy('nombreCarrera','des')
-        ->where('nombreCarrera')
-        ->get();
-        return view(carreras.createcarrera);
+        // $carreras = Carrera::all();
+        $carreras = Carrera::name($request->get('name'))->orderBy('nombreCarrera','DESC')->paginate();
+        return view('carreras.createcarrera',compact('carreras'));
     }
+    //se aumento una s a creates 
     public function create()
     {
-        $estudiantes = Estudiante::orderBy('apellidoEst', 'asc')->paginate(500);
-        $docentes = Docente::orderBy('apePaternoDoc', 'asc')->paginate(500);
-        $areas = Area::orderby('nombreArea','asc')
-        ->where('clasificacion','area')
-        ->get();
-        $carreras = Carrera::orderby('idCarrera','asc')
-        //$carreras = Carrera::all();
-       // dd($carreras);
-       // ->where('clasificacion','area')
-        ->get();
-        $subareas = Area::orderby('nombreArea','asc')
-        ->where('clasificacion','subarea')
-        ->get();
-        $modalidades = Modalidad::orderby('nombreMod','asc')->paginate(500);
-        
-
-        $res[0]=$estudiantes;
-        $res[1]=$docentes;
-        $res[2]=$areas;
-        $res[3]=$modalidades;
-        $res[4]=$subareas;
-        $res[5]=$carreras;
-        return view('carreras.createcarrera', compact('res'));
+        return view('carreras.create');
     }
-    // public function store(Request $request)
-    // {
-
-    //     $mytime = \Carbon\Carbon::now();
-
-
-
-    //     $this->validate($request, [
-    //         'titulo' => 'required|string',
-    //         'objetivos' => 'required|string',
-    //         'descripcion' => 'required|string',
-    //         'periodo' => 'required|string',
-    //         'idModalidad' => 'required|integer',
-
-        
-    //     ]);
-    // }
+    public function guardar(Request $request)
+    {
+        $this->validate($request,[
+            'nombreCarrera' => 'required'
+        ]);
+        Carrera::create($request->all());
+        //dd($request->all());
+       return back();
+    }
     public function store(Request $request)
     {
         
         $this->validate($request, [
             'nombreCarrera' => 'required|string',
-            // 'nombreEst' => 'required|string',
-            // 'apellidoEst' => 'required|string',
-            // 'emailEst' => 'required|email',
-            // 'telefono' => 'required|integer',
         ]);
-        Carrera::create([
-            'nombreCarrera' => $request['nombreCarrera'],
-            // 'nombreEst' => $request['nombreEst'],
-            // 'apellidoEst' => $request['apellidoEst'],
-            // 'emailEst' => $request['emailEst'],
-            // 'telefono' => $request['telefono'],
-            // 'idCarrera' => $request['idCarrera'],
-        ]);
-        return response()->json([
-            'message' => 'Se agrego correctamente!',
-        ]);   
+        // Carrera::create([
+        //     'nombreCarrera' => $request['nombreCarrera'],
+        // ]);
+        $carrera = new Carrera();
+        $carrera->nombreCarrera = $request->nombreCarrera;
+        
+        if($carrera->save()){
+            return back()->with('msj','Datos guardados');
+        }else{
+            return back()->with('nmsj','Los datos no se guardaron');
+        }
+       
+        // return back()->with('msj','Se guardaro datos correctaente');
 
     }
 

@@ -9,9 +9,9 @@
 	    		
                 <label class="sr-only" ></label>
                 <div class="md-form input-group mb-3">
-                <input type="text" class="form-control pl-0 rounded-0" id="Search1" type="text" placeholder="Buscar Proyectos...">
+                	<input type="text" class="form-control pl-0 rounded-0" id="Search1" type="text" placeholder="Buscar Proyectos...">
                 </div>
-	    </div>    	
+	  </div>    	
         <div class="col-md-3" ></div>
 
     	
@@ -29,7 +29,7 @@
 		  <thead>
 		    <tr>
 		      <th style="width: 10%"  class="text-center"><font size="3">Codigo</font></th>
-					<th style="width: 10%"  class="text-center"><font size="3">Estudiante</font></th>
+					<!-- <th style="width: 10%"  class="text-center"><font size="3">Estudiante</font></th> -->
 		      <th style="width: 35%"><font size="3">Nombre Proyecto</font></th>
 		      <th style="width: 35%"><font size="3">Area Proyecto</font></th>
               <th style="width: 10%"><font size="3">Estado</font></th>

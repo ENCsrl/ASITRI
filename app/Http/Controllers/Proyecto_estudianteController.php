@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Proyecto_estudiante;
 use App\Asignacion;
+use App\User;
 class Proyecto_estudianteController extends Controller
 {
     /**

@@ -10,6 +10,7 @@ use App\Docente;
 use App\Area;
 use App\Asignacion;
 use App\Tiene;
+use App\User;
 
 class DocenteController extends Controller
 {

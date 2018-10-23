@@ -17,7 +17,7 @@ use App\Proyecto_estudiante;
 use App\Docente;
 use App\Asignacion;
 use App\Renuncia;
-
+use App\User;
 class ProfileController extends Controller
 {
     /**

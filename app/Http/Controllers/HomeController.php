@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Proyecto;
 use App\Asignacion;
 use App\Proyecto_estudiante;
-
+use App\User;
 class HomeController extends Controller
 {
     /**

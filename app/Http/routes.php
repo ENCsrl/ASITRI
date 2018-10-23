@@ -30,16 +30,27 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::resource('/carreras','CarreraController');
 	Route::get('/formulario','PerfilController@create');
 	Route::post('/formulario','PerfilController@store');
-	Route::get('/createcarrera','CarreraController@create');
-	Route::post('/createcarrera','CarreraController@store');
+	Route::get('/carreras','CarreraController@index');
+	Route::get('/crear','CarreraController@create');
+	Route::post('/crear','CarreraController@store');
+	// Route::resource('/crear','CarreraController');
 	Route::get('/creates','ProfileController@create');
 	Route::get('/perfil','ProyectoController@indice');
 	Route::get('/perfil','ProyectoController@create');
 	Route::get('/perfiles','ProyectoController@indices');
 	Route::get('/perfiles','ProyectoController@create');
-	Route::get('/perfilesr','ProyectoController@indicereg');
+	Route::get('/perfilesr','ProyectoController@indicereg'); //for form perfil
+	// Route::get('/perfilesr','ProyectoController@indexPerfil');
+	//  lunes
+	Route::get('/registry','PerfilController@index');
+	Route::post('/registry','PerfilController@store');
+	//
 	//Route::get('/reportes','ProyectoController');
 	//Route::get('/creates','ProfileController@index');
+	// nuevamente ingresando 20/10/18
+	// Route::get('/carreras','CarreraController@crear');
+	// Route::post('/carreras','CarreraController@guardar');
+
 	Route::post('/creates','ProfileController@store');
    // elmina
 	Route::resource('/proyectos', 'ProyectoController');

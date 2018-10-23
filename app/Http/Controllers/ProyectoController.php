@@ -10,6 +10,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Proyecto;
 use App\Estudiante;
+use App\Perfil;
 use App\Carrera;
 use App\Area;
 use App\Modalidad;
@@ -18,7 +19,7 @@ use App\Proyecto_estudiante;
 use App\Docente;
 use App\Asignacion;
 use App\Renuncia;
-
+use App\User;
 class ProyectoController extends Controller
 {
     /**
@@ -31,6 +32,12 @@ class ProyectoController extends Controller
         //return view ('proyectos.mainproyecto');
         $proyectos = Proyecto::orderBy('idProyecto', 'des')->paginate(500);
         return view('proyectos.mainproyecto', compact('proyectos'));
+    }
+    public function indexPerfil()
+    {
+        //return view ('proyectos.mainproyecto');
+        $proyectos = Proyecto::orderBy('idProyecto', 'des')->paginate(500);
+        return view('proyectos.perfilesreg', compact('proyectos'));
     }
     public function indicereg(){
 

@@ -183,7 +183,7 @@ class EstudianteController extends Controller
             'titulo' => $titulo,//$titulo?$titulo:'NULL',
             'tutores' => $tutores,//$tutores?$tutores:'NULL',
             'tribunales' => $tribunales,//$tribunales?$tribunales:'NULL',
-            //->where('estado', 'terminado')
+            //->where('estado', 'activo')
         ]);
     }
 

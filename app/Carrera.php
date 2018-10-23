@@ -12,4 +12,12 @@ class Carrera extends Model
     protected $fillable = ['nombreCarrera'];
     //ya no guarda el created_at, updated_at 
     public $timestamps = false;
+
+
+public function scopeName($query, $name)
+{
+    if(trim($name)!=""){
+        $query -> where('nombreCarrera',$name);
+    }
+}
 }
